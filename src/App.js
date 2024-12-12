@@ -35,38 +35,8 @@ const App = () => {
     setIntroText("Bhaskhar is listening...");
   };
 
-  const submitQuery = () => {
-    if (queryInput.trim() === "") {
-      noResolutionAction();
-      return;
-    }
-    processingAction();
-    setTimeout(() => {
-      if (queryInput.toLowerCase() === "happy") {
-        resolutionAction();
-      } else {
-        noResolutionAction();
-      }
-    }, 2000);
-  };
-
-  const processingAction = () => {
-      setAvatarSrc(AVATAR_IMAGES.thinking);
-      setIntroText("Bhaskhar is thinking...");
-      setResultText("Processing your query...");
-  };
-    
-  const resolutionAction = () => {
-    setAvatarSrc(AVATAR_IMAGES.celebrate);
-      setIntroText("Query resolved! I'm happy to help!");
-      setResultText("Here's your resolution: [Details Here]");
-  };
   
-  const noResolutionAction = () => {
-      setAvatarSrc(AVATAR_IMAGES.sad);
-      setIntroText("Sorry, I couldn't find a resolution.");
-      setResultText("I couldn't resolve your query. Please try again.");
-  };
+
 
 
   return (
@@ -78,7 +48,7 @@ const App = () => {
       <SearchBar 
         queryInput={queryInput}
         onInputChange={(e) => {setQueryInput(e.target.value); typingAction()}}
-        onSubmitQuery={submitQuery}
+        
       />
       <ResultArea resultText={resultText} />
     </div>
