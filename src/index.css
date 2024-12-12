@@ -1,124 +1,29 @@
-/* General Body Styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Theme Variables */
-:root {
-  --background-color: #eef2f3; /* Light theme background */
-  --text-color: #333;
-}
-
-body.light-theme {
-  background: linear-gradient(to right, #4285f4, #34a853, #fbbc05, #ea4335); /* Google Gradient for light theme */
-}
-
-body.dark-theme {
-  --background-color: #121212; /* Dark theme background */
-  --text-color: #f1f1f1;
-  background: #121212; /* Solid dark background for dark theme */
-}
-
-/* Main Container */
 .container {
-  width: 90%;
-  max-width: 400px;
-  background: var(--background-color);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  position: relative; /* Added to position the theme toggle inside */
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
-
-/* Avatar Styling */
-.avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: block;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
-}
-
-/* Title Styling */
-h1 {
-  margin-top: 10px;
-  color: var(--text-color);
-}
-
-/* Introduction Text */
-.intro {
-  color: var(--text-color);
-  font-size: 14px;
-  margin: 10px 0 20px;
-}
-
-/* Search Bar */
-.search-bar {
   display: flex;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.search-bar input {
-  flex: 1;
+input {
   padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-  background: var(--background-color);
-  color: var(--text-color);
-  border-color: var(--text-color);
+  margin-bottom: 10px;
+  width: 200px;
+  border: 1px solid #ccc;
 }
 
-.search-bar button {
-  padding: 10px 20px;
-  background: #007bff;
-  color: #fff;
+button {
+  padding: 10px;
   border: none;
-  border-radius: 0 4px 4px 0;
+  background-color: #007bff;
+  color: white;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
-.search-bar button:hover {
-  background: #0056b3;
+button:disabled {
+  background-color: #ccc;
 }
 
-/* Result Area */
 .result {
-  padding: 10px;
-  background: var(--background-color);
-  border-radius: 4px;
-  border: 1px solid #ddd;
-  min-height: 50px;
-  font-size: 14px;
-  color: var(--text-color);
-  border-color: var(--text-color);
+  margin-top: 20px;
 }
